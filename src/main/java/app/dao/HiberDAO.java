@@ -74,5 +74,28 @@ public class HiberDAO {
         return underwear;
     }
 
+    @Transactional
+    public void init(){
+        Footwear footwear = new Footwear("Белые", "Кросовки");
+        Headwear headwear = new Headwear("Белая", "Кепка");
+        Outerwear outerwear = new Outerwear("Белая", "Блузка");
+        Underwear underwear = new Underwear("Белые", "Шорты");
+
+        em.persist(footwear);
+        em.persist(headwear);
+        em.persist(outerwear);
+        em.persist(underwear);
+
+        footwear = new Footwear("Черные", "Туфли");
+        outerwear = new Outerwear("Черная", "Футболка");
+        underwear = new Underwear("Черная", "Юбка");
+
+        em.persist(footwear);
+        em.persist(outerwear);
+        em.persist(underwear);
+
+
+    }
+
 
 }

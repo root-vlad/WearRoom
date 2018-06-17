@@ -24,29 +24,34 @@ public class MainController {
         return mv;
     }
 
-
     @RequestMapping("addHeadwear.do")
     public ModelAndView addHeadwear(String color, String name){
         dao.addHeadwear(color, name);
         return showAll();
     }
 
-    @RequestMapping
+    @RequestMapping("addFootwear.do")
     public ModelAndView addFootwear(String color, String name){
         dao.addFootwear(color, name);
         return showAll();
     }
 
-    @RequestMapping
+    @RequestMapping("addOuterwear.do")
     public ModelAndView addOuterwear(String color, String name){
         dao.addOuterwear(color, name);
         return showAll();
     }
 
-    @RequestMapping
+    @RequestMapping("addUnderwear.do")
     public ModelAndView addUnderwear(String color, String name){
         dao.addUnderwear(color, name);
         return showAll();
+    }
+
+    @RequestMapping("init.do")
+    public String init(){
+        dao.init();
+        return "redirect:list.do";
     }
 
 }
