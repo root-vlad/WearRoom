@@ -1,22 +1,11 @@
 package app.models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
 
 @Entity
-@Table
-public class Headwear {
-
-    @Id
-    @GeneratedValue
-    @Column(name="HEADWEAR_ID")
-    private long id;
-
-
-    private String name;
-    private String color;
-
-    public Headwear(String color, String name){
-        this.color = color;
-        this.name = name;
+public class Headwear extends Wear {
+    public Headwear(){}
+    public Headwear(String color, String name) {
+        super(color, name);
     }
 }

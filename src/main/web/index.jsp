@@ -19,51 +19,55 @@
 <body>
 <ul>
     <li><a href="init.do"/>Заполнить заново</a></li>
-    <li><a href="addcat.do"/>Добавить кошку</a></li>
-    <li><a href="addPerson.do"/>Добавить человека</a></li>
+    <%--<li><a href="addcat.do"/>Добавить кошку</a></li>--%>
+    <%--<li><a href="addPerson.do"/>Добавить человека</a></li>--%>
     <li><a href="wears.do"/>Просто посмотреть</a></li>
-    <li>
-        <form action="showCat.do">  <input type="submit" value="Показать кошку по ID: "/> <input name="id"/> </form>
-    </li>
-    <li>
-        <form action="deleteCat.do">  <input type="submit" value="Удалить кошку по ID: "/> <input name="id"/> </form>
-    </li>
-    <li>
-        <form action="deletePerson.do">  <input type="submit" value="Удалить человека по ID: "/> <input name="id"/> </form>
-    </li>
-    <li>
-        <form action="giveCat.do">  Отдать кошку c ID= <input name="cid"/>  человеку c ID=<input name="pid"/><input type="submit" value="OK"> </form>
-    </li>
-
-
 </ul>
 
-<h1>Кошки:</h1>
+<h1>Головные уборы:</h1>
 <table><tbody>
-<c:forEach var="x" items="${cats}">
+<c:forEach var="x" items="${headwears}">
 <tr>
     <td>${x.id}</td>
     <td>${x.name}</td>
-    <td>${x.weight}</td>
-    <td>${x.owner.id}</td>
-    <td>${x.owner.name}</td>
-
+    <td>${x.color}</td>
 </tr>
 </c:forEach>
     <tbody></table>
 
-<h1>Люди:</h1>
+<h1>Обувь:</h1>
 <table><tbody>
-<c:forEach var="x" items="${persons}">
+<c:forEach var="x" items="${footwears}">
 <tr>
     <td>${x.id}</td>
     <td>${x.name}</td>
-    <td>${x.catIds}</td>
+    <td>${x.color}</td>
 </tr>
 </c:forEach>
     <tbody></table>
 
-<div class="status">${status}</div>
+<h1>Верхняя одежда:</h1>
+<table><tbody>
+<c:forEach var="x" items="${outerwears}">
+<tr>
+    <td>${x.id}</td>
+    <td>${x.name}</td>
+    <td>${x.color}</td>
+</tr>
+</c:forEach>
+    <tbody></table>
+
+<h1>Нижняя одежда:</h1>
+<table><tbody>
+<c:forEach var="x" items="${underwears}">
+<tr>
+    <td>${x.id}</td>
+    <td>${x.name}</td>
+    <td>${x.color}</td>
+</tr>
+</c:forEach>
+    <tbody></table>
+
 </body>
 </html>
 

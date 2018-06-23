@@ -1,21 +1,11 @@
 package app.models;
 
-import javax.persistence.Column;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
+import javax.persistence.Entity;
 
-public class Footwear {
-
-    @Id
-    @GeneratedValue
-    @Column(name="FOOTWEAR_ID")
-    private long id;
-
-    private String name;
-    private String color;
-
-    public Footwear(String color, String name){
-        this.color = color;
-        this.name = name;
+@Entity
+public class Footwear extends Wear {
+    public Footwear() {}
+    public Footwear(String color, String name) {
+        super(color, name);
     }
 }

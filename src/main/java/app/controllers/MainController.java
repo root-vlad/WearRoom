@@ -2,6 +2,7 @@ package app.controllers;
 
 import app.dao.HiberDAO;
 import app.models.Footwear;
+import app.service.Fashion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -12,7 +13,7 @@ public class MainController {
 
     @Autowired
     HiberDAO dao;
-
+    Fashion fashion = new Fashion();
 
     @RequestMapping("wears.do")
     public ModelAndView showAll() {
@@ -21,6 +22,16 @@ public class MainController {
         mv.addObject("headwears", dao.getAllHeadwears());
         mv.addObject("outerwears", dao.getAllOuterwears());
         mv.addObject("underwears", dao.getAllUnderwears());
+        return mv;
+    }
+
+    @RequestMapping("fashionWears.do")
+    public ModelAndView showFashionWears() {
+        ModelAndView mv = new ModelAndView("view");
+        mv.addObject("footwears", fashion.getFashionFootwears(dao));
+        mv.addObject("headwears", fashion.getFashionHeadwears(dao));
+        mv.addObject("outerwears", fashion.getFashionOuterwears(dao));
+        mv.addObject("underwears", fashion.getFashionUnderwears(dao));
         return mv;
     }
 
@@ -51,7 +62,7 @@ public class MainController {
     @RequestMapping("init.do")
     public String init(){
         dao.init();
-        return "redirect:list.do";
+        return "redirect:wears.do";
     }
 
 }

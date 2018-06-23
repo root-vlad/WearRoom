@@ -1,9 +1,6 @@
 package app.dao;
 
-import app.models.Footwear;
-import app.models.Headwear;
-import app.models.Outerwear;
-import app.models.Underwear;
+import app.models.*;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -24,12 +21,12 @@ public class HiberDAO {
     private Random r = new Random();
     private String lastStatus;
 
-
     @Transactional
     public List<Headwear> getAllHeadwears(){
         List<Headwear> headwearList = em.createQuery("select h from Headwear h ",Headwear.class).getResultList();
         return headwearList;
     }
+
     @Transactional
     public Headwear addHeadwear(String color, String name){
          Headwear headwear = new Headwear(color, name);
@@ -37,12 +34,12 @@ public class HiberDAO {
          return headwear;
     }
 
-
     @Transactional
     public List<Footwear> getAllFootwears(){
         List<Footwear> footwearList = em.createQuery("select f from Footwear f ",Footwear.class).getResultList();
         return footwearList;
     }
+
     @Transactional
     public Footwear addFootwear(String color, String name){
         Footwear footwear = new Footwear(color, name);
@@ -67,6 +64,7 @@ public class HiberDAO {
         List<Underwear> underwearList = em.createQuery("select u from Underwear u ",Underwear.class).getResultList();
         return underwearList;
     }
+
     @Transactional
     public Underwear addUnderwear(String color, String name){
         Underwear underwear = new Underwear(color, name);
@@ -76,10 +74,10 @@ public class HiberDAO {
 
     @Transactional
     public void init(){
-        Footwear footwear = new Footwear("Белые", "Кросовки");
-        Headwear headwear = new Headwear("Белая", "Кепка");
-        Outerwear outerwear = new Outerwear("Белая", "Блузка");
-        Underwear underwear = new Underwear("Белые", "Шорты");
+        Wear footwear = new Footwear("Белые", "Кросовки");
+        Wear headwear = new Headwear("Белая", "Кепка");
+        Wear outerwear = new Outerwear("Белая", "Блузка");
+        Wear underwear = new Underwear("Белые", "Шорты");
 
         em.persist(footwear);
         em.persist(headwear);
@@ -93,8 +91,6 @@ public class HiberDAO {
         em.persist(footwear);
         em.persist(outerwear);
         em.persist(underwear);
-
-
     }
 
 
