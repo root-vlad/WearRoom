@@ -1,6 +1,7 @@
 package app.dao;
 
 import app.models.*;
+import app.service.Fashion;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
@@ -78,6 +79,9 @@ public class HiberDAO {
         Wear headwear = new Headwear("Белая", "Кепка");
         Wear outerwear = new Outerwear("Белая", "Блузка");
         Wear underwear = new Underwear("Белые", "Шорты");
+
+        Fashion fashion = new Fashion();
+        fashion.getFashionColors().forEach(color -> em.persist(color));
 
         em.persist(footwear);
         em.persist(headwear);

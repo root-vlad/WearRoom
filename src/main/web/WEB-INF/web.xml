@@ -2,7 +2,10 @@
 <web-app version="4.0" xmlns="http://xmlns.jcp.org/xml/ns/javaee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/javaee http://xmlns.jcp.org/xml/ns/javaee/web-app_4_0.xsd">
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>/WEB-INF/root-config.xml</param-value>
+        <param-value>
+            /WEB-INF/root-config.xml
+            /WEB-INF/security.xml                                                          <!-- настройка средства аутентификации -->
+        </param-value>
     </context-param>
     <servlet>
         <servlet-name>dispatcher</servlet-name>
@@ -16,6 +19,14 @@
         <servlet-name>dispatcher</servlet-name>
         <url-pattern>*.do</url-pattern>
     </servlet-mapping>
+    <filter> <!-- Сам фильтр -->                                                           <!-- настройка средства аутентификации -->
+        <filter-name>springSecurityFilterChain</filter-name>                               <!-- настройка средства аутентификации -->
+        <filter-class>org.springframework.web.filter.DelegatingFilterProxy</filter-class>  <!-- настройка средства аутентификации -->
+    </filter>                                                                              <!-- настройка средства аутентификации -->
+    <filter-mapping> <!-- И где он будет работать -->                                      <!-- настройка средства аутентификации -->
+        <filter-name>springSecurityFilterChain</filter-name>                               <!-- настройка средства аутентификации -->
+        <url-pattern>/*</url-pattern>                                                      <!-- настройка средства аутентификации -->
+    </filter-mapping>                                                                      <!-- настройка средства аутентификации -->
     <session-config>
         <session-timeout>
             30

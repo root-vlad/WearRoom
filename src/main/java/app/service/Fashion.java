@@ -5,6 +5,8 @@ import app.models.Footwear;
 import app.models.Headwear;
 import app.models.Outerwear;
 import app.models.Underwear;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import java.io.BufferedReader;
@@ -13,20 +15,19 @@ import java.io.InputStreamReader;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
-import java.util.ArrayList;
-import java.util.HashSet;
-import java.util.List;
-import java.util.Set;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.net.HttpURLConnection.*;
 import java.util.stream.Collectors;
 
 public class Fashion {
-//    private final String url = "https://lookcolor.ru/cvet-v-mode/modnye-cveta-vesna-leto-2018/";
+
+    static Logger logger = LoggerFactory.getLogger(Fashion.class);
 //    private final Pattern pattern = Pattern.compile("(\\d Модный )(\\S+)(цвет: )");
 
     public Set<String> getFashionColors(){
+       // if (true) return Collections.singleton("желтый");
         String url = "https://lookcolor.ru/cvet-v-mode/modnye-cveta-vesna-leto-2018/";
         Pattern pattern = Pattern.compile("(.*Модный )(\\S+)( цвет: .*)");
         Matcher matcher;
@@ -47,9 +48,11 @@ public class Fashion {
             }
             in.close();
         } catch (MalformedURLException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+           // e.printStackTrace();
         } catch (IOException e) {
-            e.printStackTrace();
+            throw new RuntimeException(e);
+            //e.printStackTrace();
         }
         return fashionColors;
     }
@@ -61,11 +64,14 @@ public class Fashion {
 
     public List<Footwear> getFashionFootwears(HiberDAO dao) {
         List<Footwear> fashionFootwears = dao.getAllFootwears();
+        logger.info("Getting colors (HTTP)...");
         Set<String> fashionColors = getFashionColors();
+        logger.info(fashionColors.toString());
+        //logger.info(fashionFootwears.toString());
         fashionFootwears =  fashionFootwears.
                 stream().
 //                filter(footwear -> fashionColors.contains(footwear.getColor())).
-                filter(footwear -> fashionColors.contains("желтый")).
+                filter(footwear -> fashionColors.contains(footwear.getColor())).
                 collect(Collectors.toList());
         return fashionFootwears;
 //        return dao.getAllFootwears().

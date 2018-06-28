@@ -8,7 +8,6 @@ import javax.persistence.*;
 public class Wear {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
-
     protected long id;
 
     private String name;
