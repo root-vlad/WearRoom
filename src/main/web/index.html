@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>WearRoom</title>
+    <!-- Latest compiled and minified CSS & JS -->
+    <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
+    <!--<link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css">-->
+
+</head>
+<body>
+
+<div class="page-header">
+  <h1>Гардероб<small> главная страница </small></h1>
+</div>
+<div class="panel panel-primary">
+	  <div class="panel-heading">
+			<h3 class="panel-title">Выбери тип одежды</h3>
+	  </div>
+	  <div class="panel-body">
+          <div class="btn-toolbar" role="toolbar">
+              <div class="btn-group">
+                  <form action="WEB-INF/jsp/headwear.jsp/">
+                      <button type="submit" class="btn btn-default" style="width: 150px; height: 35px" >Головные уборы</button>
+                  </form>
+                  <form action="WEB-INF/jsp/footwear.jsp/">
+                      <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Обувь</button>
+                  </form>
+                  <form action="WEB-INF/jsp/outerwear.jsp/">
+                      <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Верхняя одежда</button>
+                  </form>
+                  <form action="WEB-INF/jsp/underwear.jsp/">
+                      <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Нижняя одежда</button>
+                  </form>
+              </div>
+          </div>
+      </div>
+</div>
+
+<table class="table table-hover">
+    <thead>
+    <tr>
+        <th>название</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr>
+        <td>что-то еще</td>
+    </tr>
+    </tbody>
+</table>
+
+
+</body>
+</html>
