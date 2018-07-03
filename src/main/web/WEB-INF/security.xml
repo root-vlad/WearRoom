@@ -9,13 +9,19 @@
 
     <!--access-denied-page="/error403.jsp"-->
     <http >
-        <intercept-url pattern="/index*" access="ROLE_USER"/>
-        <intercept-url pattern="/add*" access="ROLE_USER"/>
-        <intercept-url pattern="/delete/*" access="ROLE_ADMIN"/>
+        <csrf disabled="true"/>
+        <intercept-url pattern="/"  access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/wears*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/init*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/headwears*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/init*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/add*" access="hasAnyRole('ROLE_ADMIN','ROLE_USER')"/>
+        <intercept-url pattern="/delete/*" access="hasRole('ROLE_ADMIN')"/>
+        <!--<intercept-url pattern="/delete/*" access="ROLE_ADMIN"/>-->
         <form-login login-page="/login.jsp" default-target-url="/index" authentication-failure-url="/login.jsp?error=true"/>
         <logout logout-url="/logout" logout-success-url="/index"/>
-        <anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>
-        <remember-me/>
+        <!--<anonymous username="guest" granted-authority="ROLE_ANONYMOUS"/>-->
+        <!--<remember-me/>-->
     </http>
 
     <authentication-manager>

@@ -6,7 +6,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
 @Entity
-public class Color extends Wear {
+public class Color {
     @Id
     @GeneratedValue(strategy = GenerationType.TABLE)
     protected long id;
@@ -15,8 +15,7 @@ public class Color extends Wear {
 
     public Color() {}
 
-    @Override
-    public String getColor() {
+    public String getColor1() {
         return color;
     }
 

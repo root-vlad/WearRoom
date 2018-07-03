@@ -20,12 +20,8 @@
     <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
-<ul>
-    <li><a href="init.do"/>Заполнить заново</a></li>
-    <li><a href="wears.do"/>Просто посмотреть</a></li>
-</ul>
 
-<h1>Головные уборы:</h1>
+
 <table class="table table-hover">
     <thead>
     <tr>

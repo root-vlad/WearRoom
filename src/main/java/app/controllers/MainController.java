@@ -36,7 +36,7 @@ public class MainController {
     }
 
     @RequestMapping("fashionHeadwears.do")
-    public ModelAndView showHeadwears() {
+    public ModelAndView showFashionHeadwears() {
         ModelAndView mv = new ModelAndView("headwear");
         mv.addObject("headwears", fashion.getFashionHeadwears(dao));
         return mv;

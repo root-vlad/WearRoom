@@ -35,17 +35,17 @@
     <div class="panel-body">
         <div class="btn-toolbar" role="toolbar">
             <div class="btn-group">
-                <form action="WEB-INF/jsp/headwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px" >Головные уборы</button>
+                <form action="headwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px" >Головные уборы</button>
                 </form>
-                <form action="WEB-INF/jsp/footwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Обувь</button>
+                <form action="footwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Обувь</button>
                 </form>
-                <form action="WEB-INF/jsp/outerwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Верхняя одежда</button>
+                <form action="outerwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Верхняя одежда</button>
                 </form>
-                <form action="WEB-INF/jsp/underwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Нижняя одежда</button>
+                <form action="underwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Нижняя одежда</button>
                 </form>
             </div>
         </div>
@@ -59,17 +59,14 @@
     <div class="panel-body">
         <div class="btn-toolbar" role="toolbar">
             <div class="btn-group">
-                <form action="/src/main/web/init.do">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px" >Заполнить заново</button>
+                <form action="init.do">
+                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px" >Заполнить заново</button>
                 </form>
-                <form action="/src/main/web/wears.do">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Просто посмотреть</button>
+                <form action="wears.do">
+                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px">Просто посмотреть</button>
                 </form>
-                <form action="WEB-INF/jsp/outerwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Верхняя одежда</button>
-                </form>
-                <form action="WEB-INF/jsp/underwear.jsp/">
-                    <button type="submit" class="btn btn-default" style="width: 150px; height: 35px">Нижняя одежда</button>
+                <form action="fashionHeadwears.do/">
+                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px">Модные головные уборы</button>
                 </form>
             </div>
         </div>
