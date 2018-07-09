@@ -8,4 +8,7 @@ public class Headwear extends Wear {
     public Headwear(String color, String name) {
         super(color, name);
     }
+    public Headwear(String color, String name, UserWear userWear) {
+        super(color, name, userWear);
+    }
 }

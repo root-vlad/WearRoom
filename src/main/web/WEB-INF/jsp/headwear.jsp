@@ -17,16 +17,10 @@
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
-<ul>
-    <li><a href="init.do"/>Заполнить заново</a></li>
-    <li><a href="wears.do"/>Просто посмотреть</a></li>
-</ul>
-
 <div class="page-header">
-    <h1>Гардероб<small> главная страница </small></h1>
+    <h1>Гардероб<small> Головные уборы </small></h1>
 </div>
 <div class="panel panel-primary">
     <div class="panel-heading">
@@ -59,21 +53,26 @@
     <div class="panel-body">
         <div class="btn-toolbar" role="toolbar">
             <div class="btn-group">
-                <form action="init.do">
-                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px" >Заполнить заново</button>
+                <%--<form action="init.do">--%>
+                    <%--<button type="submit" class="btn btn-default" style="width: 255px; height: 35px" >Заполнить заново</button>--%>
+                <%--</form>--%>
+                <%--<form action="wears.do">--%>
+                    <%--<button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Просто посмотреть</button>--%>
+                <%--</form>--%>
+                <form action="addHeadwear.do">
+                    <button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Добавить головной убор</button>
+                    <input type="text" name="name" id="headwearName" class="form-control" value="Имя1" title="Имя2" required="required">
+                    <input type="text" name="color" id="headwearColor" class="form-control" value="Цвет1" title="Цвет2" required="required">
+
                 </form>
-                <form action="wears.do">
-                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px">Просто посмотреть</button>
-                </form>
-                <form action="fashionHeadwears.do/">
-                    <button type="submit" class="btn btn-default" style="width: 250px; height: 35px">Модные головные уборы</button>
+                <form action="fashionHeadwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Модные головные уборы</button>
                 </form>
             </div>
         </div>
     </div>
 </div>
 
-<h1>Головные уборы:</h1>
 <table class="table table-hover">
     <thead>
     <tr>

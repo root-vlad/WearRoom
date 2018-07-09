@@ -17,19 +17,69 @@
     <!-- Latest compiled and minified CSS & JS -->
     <link rel="stylesheet" media="screen" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"></script>
-    <link href="<c:url value='main.css'/>" rel="stylesheet" type="text/css">
 </head>
 <body>
+<div class="page-header">
+    <h1>Гардероб<small> Обувь </small></h1>
+</div>
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Выбери тип одежды</h3>
+    </div>
+    <div class="panel-body">
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+                <form action="headwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px" >Головные уборы</button>
+                </form>
+                <form action="footwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Обувь</button>
+                </form>
+                <form action="outerwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Верхняя одежда</button>
+                </form>
+                <form action="underwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 200px; height: 35px">Нижняя одежда</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
+<div class="panel panel-primary">
+    <div class="panel-heading">
+        <h3 class="panel-title">Выбери тип режима</h3>
+    </div>
+    <div class="panel-body">
+        <div class="btn-toolbar" role="toolbar">
+            <div class="btn-group">
+                <%--<form action="init.do">--%>
+                    <%--<button type="submit" class="btn btn-default" style="width: 255px; height: 35px" >Заполнить заново</button>--%>
+                <%--</form>--%>
+                <%--<form action="wears.do">--%>
+                    <%--<button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Просто посмотреть</button>--%>
+                <%--</form>--%>
+                <form action="addFootwear.do">
+                    <button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Добавить обувь</button>
+                    <input type="text" name="name" id="headwearName" class="form-control" value="Имя1" title="Имя2" required="required">
+                    <input type="text" name="color" id="headwearColor" class="form-control" value="Цвет1" title="Цвет2" required="required">
+                </form>
+                <form action="fashionFootwears.do">
+                    <button type="submit" class="btn btn-default" style="width: 255px; height: 35px">Модная обувь</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
 
 <table class="table table-hover">
     <thead>
     <tr>
-        <th>Головные уборы:</th>
+        <th>Обувь:</th>
     </tr>
     </thead>
     <tbody>
-    <c:forEach var="x" items="${headwears}">
+    <c:forEach var="x" items="${footwears}">
     <tr>
         <td>${x.id}</td>
         <td>${x.name}</td>

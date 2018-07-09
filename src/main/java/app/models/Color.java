@@ -11,16 +11,17 @@ public class Color {
     @GeneratedValue(strategy = GenerationType.TABLE)
     protected long id;
 
-    private String color;
+    private String colorName;
 
     public Color() {}
-
-    public String getColor1() {
-        return color;
-    }
-
-    public Color(String color) {
-        this.color = color;
+    public Color(String colorName) {
+        this.colorName = colorName;
 
     }
+
+    public String getColor() {
+        return colorName;
+    }
+
+
 }
